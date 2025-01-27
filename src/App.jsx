@@ -18,12 +18,16 @@ function App() {
     addition ="Hurray!";
 
   useEffect(() => { 
-    setTimeout(() => {
-        
+    let interval;
+    if(isStarted && currTime > 0) {
+    interval = setInterval(() => {
+        console.log(currTime);
         setTime(prev => prev-1);
         
       }, 1000);
-  }, [currTime]);
+      return () => clearInterval(interval);
+    }
+  }, [isStarted]);
 
   if(isStarted)
   {
@@ -64,7 +68,7 @@ else
   return (
     <div className='container initial-container'>
     <h1 style={{color:"white"}}> Welcome to Flash Revision App.</h1>
-    <Button variant="contained" sx={{fontFamily:'"Baloo 2", sans-serif', fontSize:"20px", textTransform:"none"}} onClick={()=>{setStarted(!isStarted); setTime(100)}}>Get Started</Button>
+    <Button variant="contained" sx={{fontFamily:'"Baloo 2", sans-serif', fontSize:"20px", textTransform:"none"}} onClick={()=>{setStarted(prev => !prev); setTime(100)}}>Get Started</Button>
     </div>
   );
 }

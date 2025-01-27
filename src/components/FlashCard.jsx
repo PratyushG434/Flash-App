@@ -6,10 +6,10 @@ function FlashCard({ques,index,cards,setCards,time})
 { 
   const [isFlipped,setFlipped] = useState(false)
   function handleClick() {
-    console.log('Clicked')
-    console.log(isFlipped)
+    // console.log('Clicked')
+    // console.log(isFlipped)
     setFlipped(!isFlipped)
-    console.log(cards)
+    // console.log(cards)
     handleProgress();
     document.getElementsByClassName("flip-card-inner")[0].classList.toggle("flip-card-click")
 
@@ -17,8 +17,8 @@ function FlashCard({ques,index,cards,setCards,time})
   function handleProgress()
   {
     const id = cards.find((element)=> element==index);
-    console.log(id);
-    console.log(index)
+    // console.log(id);
+    // console.log(index)
     if(!isFlipped)
     {
       if(id==undefined && time >0)

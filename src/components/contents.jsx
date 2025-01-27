@@ -121,7 +121,7 @@ const flashcards = [
     }
   ];
   
-  console.log(flashcards);
+  // console.log(flashcards);
 
   export default flashcards
 

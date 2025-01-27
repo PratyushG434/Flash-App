@@ -22,7 +22,7 @@ const CardSlider = ({cards,setCards,time}) => {
   function anotherCard(index){
     setCurrentIndex(index);
   };
-  console.log(anotherCard);
+  // console.log(anotherCard);
 
   return (
     <div className="card-slider">
